@@ -1,0 +1,37 @@
+{% extends './layout.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block body %}
+
+<br>
+  <div class="form-control">
+    <div class="card-body">
+      <h3 class="card-title">Register</h3>
+
+      <form method="post" action>
+        <div class="form-floating mb-2">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="user" class="form-control" id="floatingInput" placeholder="User">
+          <label for="floatingInput">User</label>
+        </div>
+
+        <div class="form-floating mb-2">
+          <input type="password" class="form-control" id="pwd" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="password" class="form-control" id="pwd1" placeholder="Password">
+          <label for="floatingPassword">Confirm Password</label>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary btn-lg">Login</button>
+        <a href="/register" class="btn btn-lg btn-outline-secondary mb" >Register</a>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

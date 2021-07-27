@@ -1,0 +1,32 @@
+{% extends './layout.html' %}
+
+{% block title %} Principal {% endblock %}
+
+{% block body %}
+<br><br>
+<div class="bd-masthead mb-3" id="content">
+    <div class="container px-4 px-md-3">
+      <div class="row align-items-lg-center">
+        <div class="col-8 mx-auto col-md-4 order-md-2 col-lg-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Umbrella_Corporation_logo.svg/300px-Umbrella_Corporation_logo.svg.png" alt="Italian Trulli" style="width:350px; height: 300px;">
+        </div>
+        <div class="col-md-8 order-md-1 col-lg-7 text-center text-md-start">
+          <h1 class="mb-3">Repositorio de images Umbrella</h1>
+          <p class="lead mb-4"><br>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ipsam neque, cumque reprehenderit ducimus illo incidunt placeat iste impedit quas laborum unde nesciunt, a laudantium nisi ipsa aliquam quos ut! Repositorio de imagenes, odio a Carlos, quiero pasar la materia y odio a Carlos
+          </p>
+  
+          <div class="d-flex flex-column flex-md-row">
+            <a href="/login" class="btn btn-lg btn-bd-primary mb-3 me-md-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Get started', 'Get started');">Login</a>
+            <a href="/register" class="btn btn-lg btn-outline-secondary mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 5.0.2');">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <form action="/File" method="POST" enctype="multipart/form-data">
+        <input type="file" name="archivo">
+        <input type="submit">
+    </form>
+{% endblock %}
