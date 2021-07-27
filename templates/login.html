@@ -1,4 +1,4 @@
-{% extends './layout.html' %}
+{% extends './layout-register-login.html' %}
 
 {% block title %} Login {% endblock %}
 
@@ -7,22 +7,37 @@
 <br>
   <div class="form-control" style="justify-self: center">
     <div class="card-body">
-      <h3 class="card-title">Register</h3>
+      <h3 class="card-title">Login</h3>
 
-      <form method="post" action>
+      <form class="form-group" action="{{ url_for('login') }}" method="post">
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+         <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
           <label for="floatingPassword">Password</label>
         </div>
         <br>
-        <button type="button" class="btn btn-primary btn-lg">Login</button>
+        
+        {% with messages = get_flashed_messages()  %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+       
+        <input type="submit" class="btn btn-primary btn-lg" value="Login">
         <a href="/register" class="btn btn-lg btn-outline-secondary mb" >Register</a>
       </form>
     </div>
   </div>
+
 
 {% endblock %}
