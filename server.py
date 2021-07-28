@@ -23,7 +23,7 @@ def index():
 @app.route('/home')
 def home():
     if 'loggedin' in session:
-        return render_template('home.html', username=session['username'])
+        return render_template('home.html', username=session['username'], email=session['email'])
     return redirect(url_for('login'))
 
 @app.route('/login/', methods=['GET', 'POST'])
@@ -55,7 +55,6 @@ def login():
             flash('Incorrect username/password')
  
     return render_template('login.html')
-
 
 @app.route('/register', methods=['GET','POST'])
 def register():
